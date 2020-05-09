@@ -11,6 +11,7 @@ import UIKit
 class FirstViewController: UIViewController {
     
     @IBOutlet weak var postJobButton: UIButton!
+
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -25,9 +26,11 @@ class FirstViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
 
 
 }

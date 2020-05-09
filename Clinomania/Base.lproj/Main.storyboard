@@ -42,7 +42,7 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
-                                    <segue destination="mag-WD-xec" kind="show" id="ybq-LK-4Fl"/>
+                                    <segue destination="mag-WD-xec" kind="show" identifier="JobPostDetails" id="ybq-LK-4Fl"/>
                                 </connections>
                             </button>
                         </subviews>
