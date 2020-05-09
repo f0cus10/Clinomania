@@ -37,7 +37,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="d8l-ia-bJc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <state key="normal" title="Post New Job">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="1688.8" y="-320.68965517241384"/>
         </scene>
-        <!--View Controller-->
+        <!--Job Post View Controller-->
         <scene sceneID="VbP-0M-lBl">
             <objects>
-                <viewController id="mag-WD-xec" sceneMemberID="viewController">
+                <viewController id="mag-WD-xec" customClass="JobPostViewController" customModule="Clinomania" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="job-HQ-Qmu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -77,7 +77,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wMC-k8-j6R">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Plumbing, Gardening" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wMC-k8-j6R">
                                 <rect key="frame" x="32" y="148" width="311" height="40"/>
                                 <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -92,7 +92,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yjq-kE-bik">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$/hr" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yjq-kE-bik">
                                 <rect key="frame" x="32" y="224" width="311" height="40"/>
                                 <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -107,7 +107,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GUs-y8-dgQ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(in hours)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GUs-y8-dgQ">
                                 <rect key="frame" x="32" y="300" width="311" height="40"/>
                                 <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -133,10 +133,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="x9y-VD-6TA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitJobPosting" destination="mag-WD-xec" eventType="touchUpInside" id="S31-Tb-OIv"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -148,6 +151,7 @@
                             <constraint firstItem="Mu5-Gl-6Yg" firstAttribute="leading" secondItem="vah-eD-IAF" secondAttribute="leading" constant="32" id="ILd-1B-AU9"/>
                             <constraint firstItem="GUs-y8-dgQ" firstAttribute="leading" secondItem="vah-eD-IAF" secondAttribute="leading" constant="32" id="Im8-PK-3Kr"/>
                             <constraint firstItem="wMC-k8-j6R" firstAttribute="top" secondItem="7qk-ko-Lrm" secondAttribute="bottom" constant="4" id="NMS-1X-0tT"/>
+                            <constraint firstItem="wMC-k8-j6R" firstAttribute="top" secondItem="7qk-ko-Lrm" secondAttribute="bottom" constant="4" id="NMu-wa-0q8"/>
                             <constraint firstItem="7qk-ko-Lrm" firstAttribute="top" secondItem="vah-eD-IAF" secondAttribute="top" constant="84" id="NSy-Vd-ija"/>
                             <constraint firstItem="Yjq-kE-bik" firstAttribute="leading" secondItem="job-HQ-Qmu" secondAttribute="leading" constant="32" id="TuH-9x-5kk"/>
                             <constraint firstItem="vah-eD-IAF" firstAttribute="trailing" secondItem="GUs-y8-dgQ" secondAttribute="trailing" constant="32" id="VhK-Ac-C30"/>
@@ -155,7 +159,6 @@
                             <constraint firstItem="uui-K3-2Un" firstAttribute="leading" secondItem="vah-eD-IAF" secondAttribute="leading" constant="32" id="aUq-Xy-EZd"/>
                             <constraint firstItem="7qk-ko-Lrm" firstAttribute="leading" secondItem="vah-eD-IAF" secondAttribute="leading" constant="32" id="cx7-XN-1fO"/>
                             <constraint firstItem="KQ4-ve-0ta" firstAttribute="top" secondItem="wMC-k8-j6R" secondAttribute="bottom" constant="16" id="d3N-Sm-lTe"/>
-                            <constraint firstItem="uui-K3-2Un" firstAttribute="top" relation="lessThanOrEqual" secondItem="Mu5-Gl-6Yg" secondAttribute="bottom" constant="64" id="fQW-kQ-cO8"/>
                             <constraint firstItem="GUs-y8-dgQ" firstAttribute="top" secondItem="jaL-E5-xyW" secondAttribute="bottom" constant="4" id="k0p-vI-BLb"/>
                             <constraint firstItem="vah-eD-IAF" firstAttribute="trailing" secondItem="uui-K3-2Un" secondAttribute="trailing" constant="32" id="mVm-hO-rQ1"/>
                             <constraint firstItem="vah-eD-IAF" firstAttribute="trailing" secondItem="wMC-k8-j6R" secondAttribute="trailing" constant="32" id="mgQ-fg-3gd"/>
@@ -167,8 +170,19 @@
                         <viewLayoutGuide key="safeArea" id="vah-eD-IAF"/>
                     </view>
                     <navigationItem key="navigationItem" id="fK8-Vs-662">
-                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="9uj-MM-jQ8"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="9uj-MM-jQ8">
+                            <connections>
+                                <action selector="cancel" destination="mag-WD-xec" id="Jtb-yv-Kfe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addPhotoButton" destination="Mu5-Gl-6Yg" id="bF4-i7-Hgr"/>
+                        <outlet property="durationTextField" destination="GUs-y8-dgQ" id="MtL-nC-4aW"/>
+                        <outlet property="jobTypeTextField" destination="wMC-k8-j6R" id="DSQ-2m-ofv"/>
+                        <outlet property="rateTextField" destination="Yjq-kE-bik" id="OLv-gI-4Wn"/>
+                        <outlet property="submitJobButton" destination="uui-K3-2Un" id="7PK-Am-mrJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zIf-Ot-m1w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -250,7 +264,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="P22-ta-qLt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>

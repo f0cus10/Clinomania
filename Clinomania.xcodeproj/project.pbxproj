@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D5094FF9246733A00029489D /* JobPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5094FF8246733A00029489D /* JobPostViewController.swift */; };
 		D56853C0246601740040D4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853BF246601740040D4CA /* AppDelegate.swift */; };
 		D56853C2246601740040D4CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853C1246601740040D4CA /* SceneDelegate.swift */; };
 		D56853C4246601740040D4CA /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853C3246601740040D4CA /* FirstViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D5094FF8246733A00029489D /* JobPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPostViewController.swift; sourceTree = "<group>"; };
 		D56853BC246601740040D4CA /* Clinomania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clinomania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56853BF246601740040D4CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D56853C1246601740040D4CA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				D56853C3246601740040D4CA /* FirstViewController.swift */,
 				D56853C5246601740040D4CA /* SecondViewController.swift */,
 				D56853D7246610700040D4CA /* SignInViewController.swift */,
+				D5094FF8246733A00029489D /* JobPostViewController.swift */,
 				D56853C7246601740040D4CA /* Main.storyboard */,
 				D56853CA246601760040D4CA /* Assets.xcassets */,
 				D56853CC246601760040D4CA /* LaunchScreen.storyboard */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D56853C6246601740040D4CA /* SecondViewController.swift in Sources */,
+				D5094FF9246733A00029489D /* JobPostViewController.swift in Sources */,
 				D56853C4246601740040D4CA /* FirstViewController.swift in Sources */,
 				D56853C0246601740040D4CA /* AppDelegate.swift in Sources */,
 				D56853D8246610700040D4CA /* SignInViewController.swift in Sources */,
