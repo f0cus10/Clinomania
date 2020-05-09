@@ -12,11 +12,22 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var postJobButton: UIButton!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         postJobButton.layer.cornerRadius = 5.0
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+    
 
 
 }

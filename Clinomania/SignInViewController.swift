@@ -28,6 +28,11 @@ class SignInViewController: UIViewController {
         signInButton.layer.cornerRadius = 5
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     // MARK: - Helper functions
     @objc func hideKeyboard(_ gestureRecognizer: UIGestureRecognizer){
         emailTextField.resignFirstResponder()
