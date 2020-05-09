@@ -16,8 +16,7 @@ class SignInViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
-        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         // hide keyboard
         let keyboardDismissRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         self.view.addGestureRecognizer(keyboardDismissRecognizer)
@@ -30,7 +29,7 @@ class SignInViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        navigationController?.navigationBar.isHidden = false
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     // MARK: - Helper functions
