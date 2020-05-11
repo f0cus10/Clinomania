@@ -7,10 +7,18 @@
 //
 
 import UIKit
+import CoreLocation
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var postJobButton: UIButton!
+    
+    // CoreLocation variables
+    let locationManager = CLLocationManager()
+    var currentLocation: CLLocation?
+    var locationUpdateInProgress = true
+    var lastLocationError: Error?
+    
 
     
     override func viewWillAppear(_ animated: Bool) {
@@ -22,6 +30,23 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         postJobButton.layer.cornerRadius = 5.0
+        updateJobButton()
+    }
+    
+    func updateJobButton(){
+        if locationUpdateInProgress {
+            // location is still updating
+            postJobButton.setTitle("Searching", for: .disabled)
+            postJobButton.isEnabled = false
+        }
+        // location has either errored or found
+        else if let location = currentLocation {
+            print(location)
+            postJobButton.setTitle("Post New Job", for: .normal)
+            postJobButton.isEnabled = true
+        } else {
+            postJobButton.setTitle("Error", for: .highlighted)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -31,7 +56,6 @@ class FirstViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
-
 
 }
 
