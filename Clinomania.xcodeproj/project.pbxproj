@@ -16,6 +16,7 @@
 		D56853CB246601760040D4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D56853CA246601760040D4CA /* Assets.xcassets */; };
 		D56853CE246601760040D4CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D56853CC246601760040D4CA /* LaunchScreen.storyboard */; };
 		D56853D8246610700040D4CA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853D7246610700040D4CA /* SignInViewController.swift */; };
+		D5E2A36224690F5A005808C7 /* successHudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2A36124690F5A005808C7 /* successHudView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D56853CD246601760040D4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D56853CF246601760040D4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D56853D7246610700040D4CA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		D5E2A36124690F5A005808C7 /* successHudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = successHudView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				D56853C5246601740040D4CA /* SecondViewController.swift */,
 				D56853D7246610700040D4CA /* SignInViewController.swift */,
 				D5094FF8246733A00029489D /* JobPostViewController.swift */,
+				D5E2A36124690F5A005808C7 /* successHudView.swift */,
 				D56853C7246601740040D4CA /* Main.storyboard */,
 				D56853CA246601760040D4CA /* Assets.xcassets */,
 				D56853CC246601760040D4CA /* LaunchScreen.storyboard */,
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D56853C6246601740040D4CA /* SecondViewController.swift in Sources */,
+				D5E2A36224690F5A005808C7 /* successHudView.swift in Sources */,
 				D5094FF9246733A00029489D /* JobPostViewController.swift in Sources */,
 				D56853C4246601740040D4CA /* FirstViewController.swift in Sources */,
 				D56853C0246601740040D4CA /* AppDelegate.swift in Sources */,

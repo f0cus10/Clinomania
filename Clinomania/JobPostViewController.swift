@@ -20,6 +20,10 @@ class JobPostViewController: UIViewController {
         super.viewDidLoad()
         submitJobButton.layer.cornerRadius = 5.0
         addPhotoButton.layer.cornerRadius = 5.0
+        
+        //hide keyboard
+        let dismissGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(dismissGesture)
     }
     
     @IBAction func cancel(){
@@ -27,6 +31,14 @@ class JobPostViewController: UIViewController {
     }
     
     @IBAction func submitJobPosting(){
-        navigationController?.popViewController(animated: true)
+        let successHud = successHudView.hud(containerView: navigationController!.view, animated: true)
+        successHud.displayText = "Success"
+    }
+    
+    // MARK: - Helper functions
+    @objc func hideKeyboard(_ gestureRecognizer: UIGestureRecognizer){
+        jobTypeTextField.resignFirstResponder()
+        rateTextField.resignFirstResponder()
+        durationTextField.resignFirstResponder()
     }
 }

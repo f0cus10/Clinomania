@@ -12,7 +12,7 @@ class SecondViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewDidLoad() {
@@ -20,6 +20,9 @@ class SecondViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
 
 
 }

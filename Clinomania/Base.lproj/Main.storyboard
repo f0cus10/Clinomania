@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VXo-kP-9Ou">
-                                <rect key="frame" x="0.0" y="151" width="375" height="467"/>
+                                <rect key="frame" x="0.0" y="139" width="375" height="479"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -32,10 +32,10 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb3-pG-zvF">
-                                <rect key="frame" x="32" y="76" width="311" height="34"/>
+                                <rect key="frame" x="32" y="60" width="311" height="48"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.78823529410000004" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="d8l-ia-bJc"/>
+                                    <constraint firstAttribute="height" constant="48" id="d8l-ia-bJc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <state key="normal" title="Post New Job">
@@ -49,7 +49,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Tb3-pG-zvF" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="32" id="1Z2-8B-FOf"/>
-                            <constraint firstItem="Tb3-pG-zvF" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="32" id="2g7-nX-kB3"/>
+                            <constraint firstItem="Tb3-pG-zvF" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="16" id="2g7-nX-kB3"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="Tb3-pG-zvF" secondAttribute="trailing" constant="32" id="gkk-rL-BGT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
@@ -117,7 +117,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mu5-Gl-6Yg">
-                                <rect key="frame" x="32" y="436" width="311" height="40"/>
+                                <rect key="frame" x="32" y="468" width="311" height="40"/>
                                 <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="F8n-T8-HWI"/>
@@ -128,10 +128,10 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uui-K3-2Un">
-                                <rect key="frame" x="32" y="531" width="311" height="40"/>
+                                <rect key="frame" x="32" y="559" width="311" height="48"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.78823529410000004" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="x9y-VD-6TA"/>
+                                    <constraint firstAttribute="height" constant="48" id="x9y-VD-6TA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
                                 <state key="normal" title="Submit">
@@ -155,7 +155,7 @@
                             <constraint firstItem="7qk-ko-Lrm" firstAttribute="top" secondItem="vah-eD-IAF" secondAttribute="top" constant="84" id="NSy-Vd-ija"/>
                             <constraint firstItem="Yjq-kE-bik" firstAttribute="leading" secondItem="job-HQ-Qmu" secondAttribute="leading" constant="32" id="TuH-9x-5kk"/>
                             <constraint firstItem="vah-eD-IAF" firstAttribute="trailing" secondItem="GUs-y8-dgQ" secondAttribute="trailing" constant="32" id="VhK-Ac-C30"/>
-                            <constraint firstItem="vah-eD-IAF" firstAttribute="bottom" secondItem="uui-K3-2Un" secondAttribute="bottom" constant="96" id="YZK-ch-TMk"/>
+                            <constraint firstItem="vah-eD-IAF" firstAttribute="bottom" secondItem="uui-K3-2Un" secondAttribute="bottom" constant="60" id="YZK-ch-TMk"/>
                             <constraint firstItem="uui-K3-2Un" firstAttribute="leading" secondItem="vah-eD-IAF" secondAttribute="leading" constant="32" id="aUq-Xy-EZd"/>
                             <constraint firstItem="7qk-ko-Lrm" firstAttribute="leading" secondItem="vah-eD-IAF" secondAttribute="leading" constant="32" id="cx7-XN-1fO"/>
                             <constraint firstItem="KQ4-ve-0ta" firstAttribute="top" secondItem="wMC-k8-j6R" secondAttribute="bottom" constant="16" id="d3N-Sm-lTe"/>
@@ -165,7 +165,7 @@
                             <constraint firstItem="wMC-k8-j6R" firstAttribute="leading" secondItem="vah-eD-IAF" secondAttribute="leading" constant="32" id="ucg-Sg-Rzu"/>
                             <constraint firstItem="jaL-E5-xyW" firstAttribute="leading" secondItem="vah-eD-IAF" secondAttribute="leading" constant="32" id="wqM-B4-grc"/>
                             <constraint firstItem="vah-eD-IAF" firstAttribute="trailing" secondItem="Mu5-Gl-6Yg" secondAttribute="trailing" constant="32" id="xms-2B-YQR"/>
-                            <constraint firstItem="Mu5-Gl-6Yg" firstAttribute="top" secondItem="GUs-y8-dgQ" secondAttribute="bottom" constant="96" id="zMg-ft-X37"/>
+                            <constraint firstItem="Mu5-Gl-6Yg" firstAttribute="top" secondItem="GUs-y8-dgQ" secondAttribute="bottom" constant="128" id="zMg-ft-X37"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vah-eD-IAF"/>
                     </view>
@@ -259,10 +259,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5RB-Ux-Yrs">
-                                <rect key="frame" x="32" y="505" width="311" height="34"/>
+                                <rect key="frame" x="32" y="491" width="311" height="48"/>
                                 <color key="backgroundColor" red="0.16470588235294117" green="0.78823529411764703" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="P22-ta-qLt"/>
+                                    <constraint firstAttribute="height" constant="48" id="P22-ta-qLt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <state key="normal" title="Sign In">
