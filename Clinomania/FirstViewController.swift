@@ -28,6 +28,11 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         postJobButton.layer.cornerRadius = 5.0
+        
+        let buttonTitleColor = UIColor(red: 0.95, green: 0.98, blue: 0.93, alpha: 1.00)
+        postJobButton.setTitleColor(buttonTitleColor, for: .normal)
+        postJobButton.setTitleColor(buttonTitleColor, for: .disabled)
+        
         disablePostJobButton(withMessage: "Post New Job")
     }
     
@@ -74,13 +79,15 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: - UI Helper methods
     func disablePostJobButton(withMessage message: String){
+        postJobButton.setTitle(message, for: .normal)
         postJobButton.isEnabled = false
-        postJobButton.setTitle(message, for: .disabled)
+        postJobButton.backgroundColor = UIColor(red: 0.90, green: 0.22, blue: 0.27, alpha: 1.00)
     }
     
     func enablePostJobButton(withMessage message: String){
+        postJobButton.setTitle(message, for: .disabled)
         postJobButton.isEnabled = true
-        postJobButton.setTitle(message, for: .normal)
+        postJobButton.backgroundColor = UIColor(red: 0.27, green: 0.48, blue: 0.62, alpha: 1.00)
     }
 
 }
