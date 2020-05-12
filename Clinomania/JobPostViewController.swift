@@ -8,9 +8,13 @@
 
 import UIKit
 
+protocol JobPostViewControllerDelegate: class {
+    func postNewJobOrder(_ controller: JobPostViewController, didFinishCreating item: JobItem)
+}
+
 class JobPostViewController: UIViewController {
     
-    
+    weak var delegate: JobPostViewControllerDelegate?
     
     @IBOutlet weak var submitJobButton: UIButton!
     @IBOutlet weak var addPhotoButton: UIButton!
@@ -33,7 +37,7 @@ class JobPostViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func submitJobPosting(){
+    @IBAction func submitJobPosting(){        
         let successHud = successHudView.hud(containerView: navigationController!.view, animated: true)
         successHud.displayText = "Success"
     }
