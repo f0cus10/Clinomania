@@ -67,6 +67,14 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: - CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error){
         print("didFailWithError \(error.localizedDescription)")
+        
+        if (error as NSError).code == CLError.locationUnknown.rawValue {
+            return
+        }
+        
+        lastLocationError = error
+        stopLocationManager()
+        updateButton()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
