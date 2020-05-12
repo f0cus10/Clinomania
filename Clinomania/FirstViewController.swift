@@ -88,6 +88,12 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
             return
         }
         
+        var distanceFromCurrent = CLLocationDistance(Double.greatestFiniteMagnitude)
+        
+        if let location = currentLocation {
+            distanceFromCurrent = newLocation.distance(from: location)
+        }
+        
         if currentLocation == nil || currentLocation!.horizontalAccuracy > newLocation.horizontalAccuracy {
             lastLocationError = nil
             currentLocation = newLocation
@@ -96,6 +102,14 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
                 stopLocationManager()
             }
             updateButton()
+        }
+        else if distanceFromCurrent < 1 {
+            let timeInterval = newLocation.timestamp.timeIntervalSince(currentLocation!.timestamp)
+            
+            if timeInterval > 10 {
+                stopLocationManager()
+                updateButton()
+            }
         }
         print("didUpdateLocations \(newLocation)")
     }
@@ -118,15 +132,15 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: - UI Helper methods
     func updateButton(){
-        if locationUpdateInProgress {
+        if let _ = currentLocation {
+            enablePostJobButton(withMessage: "Post New Job")
+        }
+        else if locationUpdateInProgress {
             disablePostJobButton(withMessage: "Searching")
-            return
         }
-        if let _ = lastLocationError {
+        else {
             disablePostJobButton(withMessage: "Error")
-            return
         }
-        enablePostJobButton(withMessage: "Post New Job")
     }
     
     func disablePostJobButton(withMessage message: String){
