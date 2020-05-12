@@ -19,6 +19,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     var locationUpdateInProgress = true
     var lastLocationError: Error?
     
+    // CoreLocation Deadline
+    var timer: Timer?
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -49,11 +52,17 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
             showLocationServicesDeniedAlert()
         }
         
-        // start the location manager
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.startUpdatingLocation()
-        updateButton()
+        if CLLocationManager.locationServicesEnabled(){
+            // start the location manager
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+            updateButton()
+            timer = Timer.scheduledTimer(timeInterval: 45, target: self, selector: #selector(didTimeOut), userInfo: nil, repeats: false)
+        }
+        
+        //throw an error?
+        
     }
     
     func stopLocationManager(){
@@ -61,6 +70,10 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             locationManager.delegate = nil
             locationUpdateInProgress = false
+            
+            if let timer = timer {
+                timer.invalidate()
+            }
         }
     }
     
@@ -107,6 +120,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
             let timeInterval = newLocation.timestamp.timeIntervalSince(currentLocation!.timestamp)
             
             if timeInterval > 10 {
+                print("*** Cutting Off")
                 stopLocationManager()
                 updateButton()
             }
@@ -128,18 +142,28 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         navigationController?.setNavigationBarHidden(false, animated: false)
+        stopLocationManager()
     }
     
     // MARK: - UI Helper methods
     func updateButton(){
+        // TODO: refactor
         if let _ = currentLocation {
             enablePostJobButton(withMessage: "Post New Job")
-        }
-        else if locationUpdateInProgress {
-            disablePostJobButton(withMessage: "Searching")
-        }
-        else {
-            disablePostJobButton(withMessage: "Error")
+        } else {
+            if let error = lastLocationError as NSError? {
+                if error.domain == kCLErrorDomain && error.code == CLError.denied.rawValue {
+                    disablePostJobButton(withMessage: "Location Disabled")
+                } else {
+                    disablePostJobButton(withMessage: "Location Error")
+                }
+            } else if !CLLocationManager.locationServicesEnabled(){
+                disablePostJobButton(withMessage: "Location Disabled")
+            } else if locationUpdateInProgress {
+                disablePostJobButton(withMessage: "Searching")
+            } else {
+                disablePostJobButton(withMessage: "Initializing")
+            }
         }
     }
     
@@ -154,6 +178,14 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         postJobButton.isEnabled = true
         postJobButton.backgroundColor = UIColor(red: 0.27, green: 0.48, blue: 0.62, alpha: 1.00)
     }
-
+    
+    // MARK: - Timer function
+    @objc func didTimeOut(){
+        if currentLocation == nil {
+            stopLocationManager()
+            lastLocationError = NSError(domain: "ClinomaniaErrorDomain", code: 1, userInfo: nil)
+            updateButton()
+        }
+    }
 }
 
