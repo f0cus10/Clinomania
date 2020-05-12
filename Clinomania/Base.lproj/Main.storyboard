@@ -19,6 +19,7 @@
                                 <rect key="frame" x="0.0" y="139" width="375" height="479"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="sectionIndexBackgroundColor" red="0.94509803921568625" green="0.98039215686274506" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="176" id="jr0-fN-gCP">
                                         <rect key="frame" x="0.0" y="28" width="375" height="176"/>
@@ -31,13 +32,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tb3-pG-zvF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Tb3-pG-zvF">
                                 <rect key="frame" x="32" y="60" width="311" height="48"/>
                                 <color key="backgroundColor" red="0.1647058824" green="0.78823529410000004" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="d8l-ia-bJc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="15"/>
                                 <state key="normal" title="Post New Job">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
@@ -46,7 +47,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.98039215686274506" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Tb3-pG-zvF" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" constant="32" id="1Z2-8B-FOf"/>
                             <constraint firstItem="Tb3-pG-zvF" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" constant="16" id="2g7-nX-kB3"/>
@@ -74,12 +75,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Job Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7qk-ko-Lrm">
                                 <rect key="frame" x="32" y="128" width="56" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.1137254902" green="0.20784313730000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="e.g. Plumbing, Gardening" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wMC-k8-j6R">
                                 <rect key="frame" x="32" y="148" width="311" height="40"/>
-                                <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.98039215690000003" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="ut1-nn-Tni"/>
                                 </constraints>
@@ -89,60 +90,60 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQ4-ve-0ta">
                                 <rect key="frame" x="32" y="204" width="28" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.1137254902" green="0.20784313730000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$/hr" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yjq-kE-bik">
                                 <rect key="frame" x="32" y="224" width="311" height="40"/>
-                                <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.98039215690000003" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="aQk-fd-Kbj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Posting Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jaL-E5-xyW">
                                 <rect key="frame" x="32" y="280" width="101" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.1137254902" green="0.20784313730000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(in hours)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GUs-y8-dgQ">
                                 <rect key="frame" x="32" y="300" width="311" height="40"/>
-                                <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.98039215690000003" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0LL-ly-Ay5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mu5-Gl-6Yg">
                                 <rect key="frame" x="32" y="468" width="311" height="40"/>
-                                <color key="backgroundColor" systemColor="placeholderTextColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.6588235294" green="0.85490196080000003" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="F8n-T8-HWI"/>
                                 </constraints>
-                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="tintColor" red="0.1137254902" green="0.20784313730000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title=" Add Photo" image="camera.fill" catalog="system">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uui-K3-2Un">
                                 <rect key="frame" x="32" y="559" width="311" height="48"/>
-                                <color key="backgroundColor" red="0.1647058824" green="0.78823529410000004" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.11372549019607843" green="0.20784313725490194" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="x9y-VD-6TA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
                                 <state key="normal" title="Submit">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.94509803920000002" green="0.98039215690000003" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="submitJobPosting" destination="mag-WD-xec" eventType="touchUpInside" id="S31-Tb-OIv"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.94509803921568625" green="0.98039215686274506" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="KQ4-ve-0ta" firstAttribute="leading" secondItem="job-HQ-Qmu" secondAttribute="leading" constant="32" id="6av-qL-cPX"/>
                             <constraint firstItem="jaL-E5-xyW" firstAttribute="top" secondItem="Yjq-kE-bik" secondAttribute="bottom" constant="16" id="72t-vb-6J4"/>
@@ -232,48 +233,52 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ZX-sd-aZW">
                                 <rect key="frame" x="32" y="181" width="311" height="34"/>
+                                <color key="backgroundColor" red="0.6588235294" green="0.85490196080000003" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="4N2-a3-icw"/>
                                 </constraints>
+                                <color key="textColor" red="0.90196078430000004" green="0.22352941179999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="continue" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hD0-Jt-YRY">
                                 <rect key="frame" x="32" y="268" width="311" height="32"/>
+                                <color key="backgroundColor" red="0.6588235294" green="0.85490196080000003" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="Q0l-lC-rZP"/>
                                 </constraints>
+                                <color key="textColor" red="0.90196078430000004" green="0.22352941179999999" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="continue" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xx7-rh-uOB">
                                 <rect key="frame" x="32" y="144" width="55" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.1137254902" green="0.20784313730000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwn-Q2-4rc">
                                 <rect key="frame" x="32" y="231" width="98" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.1137254902" green="0.20784313730000001" blue="0.3411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5RB-Ux-Yrs">
                                 <rect key="frame" x="32" y="491" width="311" height="48"/>
-                                <color key="backgroundColor" red="0.16470588235294117" green="0.78823529411764703" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.90196078431372551" green="0.22352941176470587" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="P22-ta-qLt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
                                 <state key="normal" title="Sign In">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" red="0.94509803920000002" green="0.98039215690000003" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="49e-Tb-3d3" kind="show" identifier="showSignedIn" id="3ge-2y-ASU"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.98039215690000003" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="hD0-Jt-YRY" firstAttribute="top" secondItem="nwn-Q2-4rc" secondAttribute="bottom" constant="8" id="7li-w3-8Ir"/>
                             <constraint firstItem="5RB-Ux-Yrs" firstAttribute="centerX" secondItem="JsM-0V-Fen" secondAttribute="centerX" id="BW7-kJ-Faq"/>
