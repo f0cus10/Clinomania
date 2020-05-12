@@ -52,6 +52,11 @@ class JobPostViewController: UIViewController {
         // display hud
         let successHud = successHudView.hud(containerView: navigationController!.view, animated: true)
         successHud.displayText = "Success"
+        
+        afterDelay(0.6){
+            successHud.hide(animated: true)
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     // MARK: - Helper functions

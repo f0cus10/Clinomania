@@ -16,7 +16,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
     // CoreLocation variables
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation?
-    var locationUpdateInProgress = true
+    var locationUpdateInProgress = false
     var lastLocationError: Error?
     
     // CoreLocation Deadline
@@ -31,16 +31,20 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         postJobButton.layer.cornerRadius = 5.0
-        
         updateButton()
         let buttonTitleColor = UIColor(red: 0.95, green: 0.98, blue: 0.93, alpha: 1.00)
         postJobButton.setTitleColor(buttonTitleColor, for: .normal)
         postJobButton.setTitleColor(buttonTitleColor, for: .disabled)
+        
+        // add a GCD dispatch?
+        afterDelay(0.4, run: {
+            self.getLocation()
+        })
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        getLocation()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        getLocation()
+//    }
     
     func getLocation(){
         let authStatus = CLLocationManager.authorizationStatus()
@@ -55,11 +59,12 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
             showLocationServicesDeniedAlert()
         }
         
-        if CLLocationManager.locationServicesEnabled(){
+        if CLLocationManager.locationServicesEnabled() && !locationUpdateInProgress{
             // start the location manager
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
+            locationUpdateInProgress = true
             updateButton()
             timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(didTimeOut), userInfo: nil, repeats: false)
         }
@@ -123,9 +128,11 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
             if newLocation.horizontalAccuracy <= locationManager.desiredAccuracy {
                 stopLocationManager()
             }
-            updateButton()
+            afterDelay(0.2){
+                self.updateButton()
+            }
         }
-        else if distanceFromCurrent < 1 {
+        else if distanceFromCurrent < 2 {
             let timeInterval = newLocation.timestamp.timeIntervalSince(currentLocation!.timestamp)
             
             if timeInterval > 5 {
@@ -162,6 +169,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
     // MARK: - JobPostViewControllerDelegate methods
     func postNewJobOrder(_ controller: JobPostViewController, didFinishCreating item: JobItem) {
         // do something with the jobitem
+        stopLocationManager()
         print("didFinishCreating \(item)")
     }
     
