@@ -61,7 +61,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
             updateButton()
-            timer = Timer.scheduledTimer(timeInterval: 45, target: self, selector: #selector(didTimeOut), userInfo: nil, repeats: false)
+            timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(didTimeOut), userInfo: nil, repeats: false)
         }
         
         //throw an error?
@@ -128,7 +128,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
         else if distanceFromCurrent < 1 {
             let timeInterval = newLocation.timestamp.timeIntervalSince(currentLocation!.timestamp)
             
-            if timeInterval > 10 {
+            if timeInterval > 5 {
                 print("*** Cutting Off")
                 stopLocationManager()
                 updateButton()
