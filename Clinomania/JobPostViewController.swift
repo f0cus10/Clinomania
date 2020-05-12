@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol JobPostViewControllerDelegate: class {
     func postNewJobOrder(_ controller: JobPostViewController, didFinishCreating item: JobItem)
@@ -15,6 +16,8 @@ protocol JobPostViewControllerDelegate: class {
 class JobPostViewController: UIViewController {
     
     weak var delegate: JobPostViewControllerDelegate?
+    
+    var location: CLLocation?
     
     @IBOutlet weak var submitJobButton: UIButton!
     @IBOutlet weak var addPhotoButton: UIButton!
@@ -37,7 +40,12 @@ class JobPostViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func submitJobPosting(){        
+    @IBAction func submitJobPosting(){
+        
+        if let jobType = jobTypeTextField.text, let location = location {
+            // make a jobItem instance
+        }
+        // display hud
         let successHud = successHudView.hud(containerView: navigationController!.view, animated: true)
         successHud.displayText = "Success"
     }

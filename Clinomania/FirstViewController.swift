@@ -45,9 +45,12 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     func getLocation(){
         let authStatus = CLLocationManager.authorizationStatus()
         if authStatus == .notDetermined {
+            locationManager.delegate = self
             locationManager.requestWhenInUseAuthorization()
-            getLocation()
+            //retake authStatus
+            return
         }
+        
         if authStatus == .restricted || authStatus == .denied {
             showLocationServicesDeniedAlert()
         }
@@ -78,6 +81,12 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     // MARK: - CLLocationManagerDelegate
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        print("Authorization changed")
+        getLocation()
+    }
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error){
         print("didFailWithError \(error.localizedDescription)")
         
