@@ -9,6 +9,9 @@
 import UIKit
 
 class JobPostViewController: UIViewController {
+    
+    
+    
     @IBOutlet weak var submitJobButton: UIButton!
     @IBOutlet weak var addPhotoButton: UIButton!
     

@@ -143,6 +143,11 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         navigationController?.setNavigationBarHidden(false, animated: false)
         stopLocationManager()
+        
+        if segue.identifier == "JobPostDetails" {
+            let controller = segue.destination as! JobPostViewController
+            
+        }
     }
     
     // MARK: - UI Helper methods
