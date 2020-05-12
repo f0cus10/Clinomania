@@ -42,8 +42,12 @@ class JobPostViewController: UIViewController {
     
     @IBAction func submitJobPosting(){
         
-        if let jobType = jobTypeTextField.text, let location = location {
-            // make a jobItem instance
+        if let jobType = jobTypeTextField.text, let location = location, let rateString = rateTextField.text, let durationString = durationTextField.text {
+        
+            if let rate = Double(rateString), let duration = Double(durationString) {
+                let job = JobItem.create(withType: jobType, withLocation: location, compensation: rate*duration)
+                delegate?.postNewJobOrder(self, didFinishCreating: job)
+            }
         }
         // display hud
         let successHud = successHudView.hud(containerView: navigationController!.view, animated: true)

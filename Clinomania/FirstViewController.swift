@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class FirstViewController: UIViewController, CLLocationManagerDelegate {
+class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostViewControllerDelegate {
     
     @IBOutlet weak var postJobButton: UIButton!
     
@@ -152,11 +152,17 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         navigationController?.setNavigationBarHidden(false, animated: false)
         stopLocationManager()
-        
         if segue.identifier == "JobPostDetails" {
             let controller = segue.destination as! JobPostViewController
-            
+            controller.delegate = self
+            controller.location = currentLocation
         }
+    }
+    
+    // MARK: - JobPostViewControllerDelegate methods
+    func postNewJobOrder(_ controller: JobPostViewController, didFinishCreating item: JobItem) {
+        // do something with the jobitem
+        print("didFinishCreating \(item)")
     }
     
     // MARK: - UI Helper methods
