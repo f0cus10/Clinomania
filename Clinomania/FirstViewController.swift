@@ -29,11 +29,10 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view.
         postJobButton.layer.cornerRadius = 5.0
         
+        updateButton()
         let buttonTitleColor = UIColor(red: 0.95, green: 0.98, blue: 0.93, alpha: 1.00)
         postJobButton.setTitleColor(buttonTitleColor, for: .normal)
         postJobButton.setTitleColor(buttonTitleColor, for: .disabled)
-        
-        disablePostJobButton(withMessage: "Post New Job")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -49,6 +48,20 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         if authStatus == .restricted || authStatus == .denied {
             showLocationServicesDeniedAlert()
         }
+        
+        // start the location manager
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.startUpdatingLocation()
+        updateButton()
+    }
+    
+    func stopLocationManager(){
+        if locationUpdateInProgress {
+            locationManager.stopUpdatingLocation()
+            locationManager.delegate = nil
+            locationUpdateInProgress = false
+        }
     }
     
     // MARK: - CLLocationManagerDelegate
@@ -58,6 +71,24 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let newLocation = locations.last!
+        
+        if newLocation.timestamp.timeIntervalSinceNow < -5 {
+            return
+        }
+        
+        if newLocation.horizontalAccuracy < 0 {
+            return
+        }
+        
+        if currentLocation == nil || currentLocation!.horizontalAccuracy > newLocation.horizontalAccuracy {
+            lastLocationError = nil
+            currentLocation = newLocation
+            
+            if newLocation.horizontalAccuracy <= locationManager.desiredAccuracy {
+                stopLocationManager()
+            }
+            updateButton()
+        }
         print("didUpdateLocations \(newLocation)")
     }
     
@@ -78,14 +109,26 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     // MARK: - UI Helper methods
+    func updateButton(){
+        if locationUpdateInProgress {
+            disablePostJobButton(withMessage: "Searching")
+            return
+        }
+        if let _ = lastLocationError {
+            disablePostJobButton(withMessage: "Error")
+            return
+        }
+        enablePostJobButton(withMessage: "Post New Job")
+    }
+    
     func disablePostJobButton(withMessage message: String){
-        postJobButton.setTitle(message, for: .normal)
+        postJobButton.setTitle(message, for: .disabled)
         postJobButton.isEnabled = false
         postJobButton.backgroundColor = UIColor(red: 0.90, green: 0.22, blue: 0.27, alpha: 1.00)
     }
     
     func enablePostJobButton(withMessage message: String){
-        postJobButton.setTitle(message, for: .disabled)
+        postJobButton.setTitle(message, for: .normal)
         postJobButton.isEnabled = true
         postJobButton.backgroundColor = UIColor(red: 0.27, green: 0.48, blue: 0.62, alpha: 1.00)
     }
