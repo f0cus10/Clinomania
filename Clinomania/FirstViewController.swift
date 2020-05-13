@@ -10,6 +10,13 @@ import UIKit
 import CoreLocation
 import CoreData
 
+private let dateFormatter: DateFormatter = {
+    let formatterInstance = DateFormatter()
+    formatterInstance.dateStyle = .medium
+    formatterInstance.timeStyle = .short
+    return formatterInstance
+}()
+
 class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostViewControllerDelegate {
     
     @IBOutlet weak var postJobButton: UIButton!
@@ -40,15 +47,12 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
         postJobButton.setTitleColor(buttonTitleColor, for: .normal)
         postJobButton.setTitleColor(buttonTitleColor, for: .disabled)
         
-        // add a GCD dispatch?
+        // add a GCD dispatch
         afterDelay(0.4, run: {
             self.getLocation()
         })
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        getLocation()
-//    }
     
     func getLocation(){
         let authStatus = CLLocationManager.authorizationStatus()
@@ -72,8 +76,6 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
             updateButton()
             timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(didTimeOut), userInfo: nil, repeats: false)
         }
-        
-        //throw an error?
         
     }
     
@@ -172,7 +174,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
     
     // MARK: - JobPostViewControllerDelegate methods
     func postNewJobOrder(_ controller: JobPostViewController, didFinishCreating item: JobItem) {
-        // do something with the jobitem
+        
         stopLocationManager()
         print("didFinishCreating \(item)")
     }
@@ -218,6 +220,11 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
             lastLocationError = NSError(domain: "ClinomaniaErrorDomain", code: 1, userInfo: nil)
             updateButton()
         }
+    }
+    
+    // MARK: - Helper function
+    func format(date givenDate: Date) -> String {
+        return dateFormatter.string(from: givenDate)
     }
 }
 

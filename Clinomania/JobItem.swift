@@ -12,15 +12,13 @@ import CoreLocation
 class JobItem: NSObject {
 //    var clientID: String?
     var jobType: String = ""
-    var location = CLLocationCoordinate2D(latitude: 0.0, longitude: 0.0)
     var totalCompensation: Double = 0.0
     
-    class func create(withType: String, withLocation: CLLocation, compensation: Double) -> JobItem {
+    class func create(withType: String, compensation: Double) -> JobItem {
         // make an instance, modify, and return
         let instance = JobItem()
         
         instance.jobType = withType
-        instance.location = withLocation.coordinate
         instance.totalCompensation = compensation
         
         return JobItem()

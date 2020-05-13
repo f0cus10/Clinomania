@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let signInViewController = navController.viewControllers.first as! SignInViewController
         
-        SignInViewController.managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
+        signInViewController.managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
         
     }
 
