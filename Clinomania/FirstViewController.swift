@@ -33,6 +33,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
     // CoreData variable
     var managedObjectContext: NSManagedObjectContext!
     
+    // Date
+    var currentDate = Date()
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -174,7 +177,15 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
     
     // MARK: - JobPostViewControllerDelegate methods
     func postNewJobOrder(_ controller: JobPostViewController, didFinishCreating item: JobItem) {
-        
+        if let location = currentLocation {
+            let managedJob = Job.makeJob(withContext: managedObjectContext, jobType: item.jobType, formattedDate: currentDate, coordinate: location.coordinate)
+            
+            do {
+                try managedObjectContext.save()
+            } catch {
+                fatalCoreDataError(error)
+            }
+        }
         stopLocationManager()
         print("didFinishCreating \(item)")
     }
