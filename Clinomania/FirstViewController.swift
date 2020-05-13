@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostViewControllerDelegate {
     
@@ -21,6 +22,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
     
     // CoreLocation Deadline
     var timer: Timer?
+    
+    // CoreData variable
+    var managedObjectContext: NSManagedObjectContext!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

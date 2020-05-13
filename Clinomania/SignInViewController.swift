@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class SignInViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
+    
+    var managedObjectContext: NSManagedObjectContext!
     
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
@@ -37,5 +40,19 @@ class SignInViewController: UIViewController {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
         return
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showSignedIn" {
+//            if let jobController = (segue.destination as! UITabBarController).viewControllers?.first {
+//        }
+//
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showSignedIn", let jobController = (segue.destination as! UITabBarController).viewControllers?.first {
+            let firstChild = jobController as! FirstViewController
+            firstChild.managedObjectContext = self.managedObjectContext
+        }
     }
 }
