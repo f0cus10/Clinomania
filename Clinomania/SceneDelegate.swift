@@ -25,6 +25,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         signInViewController.managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext
         
+        listenerCoreDataNotif()
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
