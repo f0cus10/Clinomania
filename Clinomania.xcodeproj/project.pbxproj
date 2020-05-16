@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D5059411246FB4BE0022B63D /* Job+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D505940F246FB4BE0022B63D /* Job+CoreDataClass.swift */; };
+		D5059412246FB4BE0022B63D /* Job+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5059410246FB4BE0022B63D /* Job+CoreDataProperties.swift */; };
+		D5059414247078E20022B63D /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5059413247078E20022B63D /* JobTableViewCell.swift */; };
 		D5094FF9246733A00029489D /* JobPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5094FF8246733A00029489D /* JobPostViewController.swift */; };
 		D56853C0246601740040D4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853BF246601740040D4CA /* AppDelegate.swift */; };
 		D56853C2246601740040D4CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853C1246601740040D4CA /* SceneDelegate.swift */; };
@@ -17,12 +20,17 @@
 		D56853CE246601760040D4CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D56853CC246601760040D4CA /* LaunchScreen.storyboard */; };
 		D56853D8246610700040D4CA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853D7246610700040D4CA /* SignInViewController.swift */; };
 		D59B607A246B422B0026753C /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59B6079246B422B0026753C /* Functions.swift */; };
+		D59B607D246B69B60026753C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D59B607B246B69B50026753C /* DataModel.xcdatamodeld */; };
+		D59B6083246B6B5B0026753C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59B6082246B6B5B0026753C /* CoreData.framework */; };
 		D5E2A36224690F5A005808C7 /* successHudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2A36124690F5A005808C7 /* successHudView.swift */; };
 		D5E2A366246A3CB0005808C7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E2A364246A3B84005808C7 /* CoreLocation.framework */; };
 		D5E2A368246A72A6005808C7 /* JobItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E2A367246A72A6005808C7 /* JobItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D505940F246FB4BE0022B63D /* Job+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Job+CoreDataClass.swift"; path = "../Job+CoreDataClass.swift"; sourceTree = "<group>"; };
+		D5059410246FB4BE0022B63D /* Job+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Job+CoreDataProperties.swift"; path = "../Job+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D5059413247078E20022B63D /* JobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
 		D5094FF8246733A00029489D /* JobPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPostViewController.swift; sourceTree = "<group>"; };
 		D56853BC246601740040D4CA /* Clinomania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clinomania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56853BF246601740040D4CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +43,8 @@
 		D56853CF246601760040D4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D56853D7246610700040D4CA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		D59B6079246B422B0026753C /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		D59B607C246B69B60026753C /* Job.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Job.xcdatamodel; sourceTree = "<group>"; };
+		D59B6082246B6B5B0026753C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D5E2A36124690F5A005808C7 /* successHudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = successHudView.swift; sourceTree = "<group>"; };
 		D5E2A364246A3B84005808C7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D5E2A367246A72A6005808C7 /* JobItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobItem.swift; sourceTree = "<group>"; };
@@ -45,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D59B6083246B6B5B0026753C /* CoreData.framework in Frameworks */,
 				D5E2A366246A3CB0005808C7 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,18 +84,22 @@
 			isa = PBXGroup;
 			children = (
 				D56853BF246601740040D4CA /* AppDelegate.swift */,
-				D56853C1246601740040D4CA /* SceneDelegate.swift */,
+				D56853CA246601760040D4CA /* Assets.xcassets */,
+				D59B607B246B69B50026753C /* DataModel.xcdatamodeld */,
 				D56853C3246601740040D4CA /* FirstViewController.swift */,
+				D59B6079246B422B0026753C /* Functions.swift */,
+				D56853CF246601760040D4CA /* Info.plist */,
+				D505940F246FB4BE0022B63D /* Job+CoreDataClass.swift */,
+				D5059410246FB4BE0022B63D /* Job+CoreDataProperties.swift */,
+				D5E2A367246A72A6005808C7 /* JobItem.swift */,
+				D5094FF8246733A00029489D /* JobPostViewController.swift */,
+				D5059413247078E20022B63D /* JobTableViewCell.swift */,
+				D56853CC246601760040D4CA /* LaunchScreen.storyboard */,
+				D56853C7246601740040D4CA /* Main.storyboard */,
+				D56853C1246601740040D4CA /* SceneDelegate.swift */,
 				D56853C5246601740040D4CA /* SecondViewController.swift */,
 				D56853D7246610700040D4CA /* SignInViewController.swift */,
-				D5094FF8246733A00029489D /* JobPostViewController.swift */,
-				D5E2A367246A72A6005808C7 /* JobItem.swift */,
 				D5E2A36124690F5A005808C7 /* successHudView.swift */,
-				D59B6079246B422B0026753C /* Functions.swift */,
-				D56853C7246601740040D4CA /* Main.storyboard */,
-				D56853CA246601760040D4CA /* Assets.xcassets */,
-				D56853CC246601760040D4CA /* LaunchScreen.storyboard */,
-				D56853CF246601760040D4CA /* Info.plist */,
 			);
 			path = Clinomania;
 			sourceTree = "<group>";
@@ -92,6 +107,7 @@
 		D5E2A363246A3B84005808C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D59B6082246B6B5B0026753C /* CoreData.framework */,
 				D5E2A364246A3B84005808C7 /* CoreLocation.framework */,
 			);
 			name = Frameworks;
@@ -172,7 +188,11 @@
 				D5E2A36224690F5A005808C7 /* successHudView.swift in Sources */,
 				D59B607A246B422B0026753C /* Functions.swift in Sources */,
 				D5E2A368246A72A6005808C7 /* JobItem.swift in Sources */,
+				D5059411246FB4BE0022B63D /* Job+CoreDataClass.swift in Sources */,
 				D5094FF9246733A00029489D /* JobPostViewController.swift in Sources */,
+				D5059412246FB4BE0022B63D /* Job+CoreDataProperties.swift in Sources */,
+				D5059414247078E20022B63D /* JobTableViewCell.swift in Sources */,
+				D59B607D246B69B60026753C /* DataModel.xcdatamodeld in Sources */,
 				D56853C4246601740040D4CA /* FirstViewController.swift in Sources */,
 				D56853C0246601740040D4CA /* AppDelegate.swift in Sources */,
 				D56853D8246610700040D4CA /* SignInViewController.swift in Sources */,
@@ -376,6 +396,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D59B607B246B69B50026753C /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D59B607C246B69B60026753C /* Job.xcdatamodel */,
+			);
+			currentVersion = D59B607C246B69B60026753C /* Job.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D56853B4246601740040D4CA /* Project object */;
 }

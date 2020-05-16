@@ -26,11 +26,15 @@ class JobPostViewController: UIViewController {
     @IBOutlet weak var rateTextField: UITextField!
     @IBOutlet weak var durationTextField: UITextField!
     
+    @IBOutlet weak var longitudeField: UITextField!
+    @IBOutlet weak var latitudeField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         submitJobButton.layer.cornerRadius = 5.0
         addPhotoButton.layer.cornerRadius = 5.0
         
+        updateLocationFields()
         //hide keyboard
         let dismissGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         view.addGestureRecognizer(dismissGesture)
@@ -42,10 +46,11 @@ class JobPostViewController: UIViewController {
     
     @IBAction func submitJobPosting(){
         
-        if let jobType = jobTypeTextField.text, let location = location, let rateString = rateTextField.text, let durationString = durationTextField.text {
-        
+        if let jobType = jobTypeTextField.text, let rateString = rateTextField.text, let durationString = durationTextField.text {
+            
             if let rate = Double(rateString), let duration = Double(durationString) {
-                let job = JobItem.create(withType: jobType, withLocation: location, compensation: rate*duration)
+                let job = JobItem.create(withType: jobType, compensation: rate*duration)
+                
                 delegate?.postNewJobOrder(self, didFinishCreating: job)
             }
         }
@@ -60,9 +65,22 @@ class JobPostViewController: UIViewController {
     }
     
     // MARK: - Helper functions
+    func updateLocationFields(){
+        if let location = location {
+            latitudeField.text = String(coordinate: location.coordinate.latitude)
+            longitudeField.text = String(coordinate: location.coordinate.longitude)
+        }
+    }
+    
     @objc func hideKeyboard(_ gestureRecognizer: UIGestureRecognizer){
         jobTypeTextField.resignFirstResponder()
         rateTextField.resignFirstResponder()
         durationTextField.resignFirstResponder()
+    }
+}
+
+extension String {
+    init(coordinate: CLLocationDegrees){
+        self.init(format: "%.8f", coordinate)
     }
 }
