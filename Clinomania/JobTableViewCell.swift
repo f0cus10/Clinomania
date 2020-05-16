@@ -24,7 +24,7 @@ class JobTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(for: Job){
+    func configure(for forJob: Job){
         if forJob.type.isEmpty {
             jobTypeLabel.text = "(No type provided)"
         } else {

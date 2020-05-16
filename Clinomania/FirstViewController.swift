@@ -33,11 +33,29 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
     
     // CoreData variable
     var managedObjectContext: NSManagedObjectContext!
-    var jobs = [Job]()
+    
+    lazy var fetchedResultsController: NSFetchedResultsController<Job> = {
+        let fetchRequest = NSFetchRequest<Job>()
+        
+        let entity = Job.entity()
+        fetchRequest.entity = entity
+        
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        fetchRequest.fetchBatchSize = 20
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: "Jobs")
+        controller.delegate = self
+        return controller
+    }()
     
     // Date
     var currentDate = Date()
     
+    deinit {
+        fetchedResultsController.delegate = nil
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -55,18 +73,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
         postJobButton.setTitleColor(buttonTitleColor, for: .normal)
         postJobButton.setTitleColor(buttonTitleColor, for: .disabled)
         
-        let fetchRequest = NSFetchRequest<Job>()
-        let entity = Job.entity()
-        fetchRequest.entity = entity
-        // sort in descending order
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        do {
-            jobs = try managedObjectContext.fetch(fetchRequest)
-        } catch {
-            fatalCoreDataError(error)
-        }
+        performDataFetch()
         
         // add a GCD dispatch
         afterDelay(0.4, run: {
@@ -256,20 +263,62 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
     func format(date givenDate: Date) -> String {
         return dateFormatter.string(from: givenDate)
     }
+    
+    func performDataFetch(){
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalCoreDataError(error)
+        }
+    }
 }
 
-extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
+extension FirstViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return jobs.count
+        let sectionInfo = fetchedResultsController.sections![section]
+        return sectionInfo.numberOfObjects
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CreateJobCell", for: indexPath) as! JobTableViewCell
         
-        let job = jobs[indexPath.row]
+        let job = fetchedResultsController.object(at: indexPath)
         
         cell.configure(for: job)
         return cell
+    }
+}
+
+extension FirstViewController: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?){
+        switch type {
+        case .insert:
+            print("*** NSFetchedResultsChangeInsert (object)")
+            tableView.insertRows(at: [newIndexPath!], with: .fade)
+        case .delete:
+            print("*** NSFetchedResultsChangeDelete (object)")
+            tableView.deleteRows(at: [indexPath!], with: .fade)
+        case .update:
+            print("*** NSFetchedResultsChangeUpdate (object)")
+            if let cell = tableView.cellForRow(at: indexPath!) as? JobTableViewCell {
+                let updatedJob = controller.object(at: indexPath!) as! Job
+                cell.configure(for: updatedJob)
+            }
+        case .move:
+            print("*** NSFetchedResultsChangeMove (object)")
+            tableView.deleteRows(at: [indexPath!], with: .fade)
+            tableView.insertRows(at: [newIndexPath!], with: .fade)
+        @unknown default:
+            fatalError("Unhandled switch case of NSFetchedResultsChangeType")
+        }
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
     }
 }

@@ -50,6 +50,10 @@
                                                 <constraint firstItem="TK6-XG-iqa" firstAttribute="leading" secondItem="VWF-sp-PSz" secondAttribute="leading" constant="15" id="oqg-j7-tH0"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="compensationLabel" destination="TK6-XG-iqa" id="CVO-gi-TTa"/>
+                                            <outlet property="jobTypeLabel" destination="lGl-y5-6hZ" id="igP-lX-Qia"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
