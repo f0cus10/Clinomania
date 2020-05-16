@@ -10,6 +10,8 @@
 		D5059411246FB4BE0022B63D /* Job+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D505940F246FB4BE0022B63D /* Job+CoreDataClass.swift */; };
 		D5059412246FB4BE0022B63D /* Job+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5059410246FB4BE0022B63D /* Job+CoreDataProperties.swift */; };
 		D5059414247078E20022B63D /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5059413247078E20022B63D /* JobTableViewCell.swift */; };
+		D505941A2470A74E0022B63D /* beep-hightone.caf in Resources */ = {isa = PBXBuildFile; fileRef = D50594192470A74E0022B63D /* beep-hightone.caf */; };
+		D505941C2470AE170022B63D /* slide-rock.caf in Resources */ = {isa = PBXBuildFile; fileRef = D505941B2470AE170022B63D /* slide-rock.caf */; };
 		D5094FF9246733A00029489D /* JobPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5094FF8246733A00029489D /* JobPostViewController.swift */; };
 		D56853C0246601740040D4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853BF246601740040D4CA /* AppDelegate.swift */; };
 		D56853C2246601740040D4CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853C1246601740040D4CA /* SceneDelegate.swift */; };
@@ -31,6 +33,8 @@
 		D505940F246FB4BE0022B63D /* Job+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Job+CoreDataClass.swift"; path = "../Job+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D5059410246FB4BE0022B63D /* Job+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Job+CoreDataProperties.swift"; path = "../Job+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		D5059413247078E20022B63D /* JobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
+		D50594192470A74E0022B63D /* beep-hightone.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "beep-hightone.caf"; sourceTree = "<group>"; };
+		D505941B2470AE170022B63D /* slide-rock.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "slide-rock.caf"; sourceTree = "<group>"; };
 		D5094FF8246733A00029489D /* JobPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPostViewController.swift; sourceTree = "<group>"; };
 		D56853BC246601740040D4CA /* Clinomania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clinomania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56853BF246601740040D4CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D50594182470A74E0022B63D /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D50594192470A74E0022B63D /* beep-hightone.caf */,
+				D505941B2470AE170022B63D /* slide-rock.caf */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		D56853B3246601740040D4CA = {
 			isa = PBXGroup;
 			children = (
@@ -83,23 +96,24 @@
 		D56853BE246601740040D4CA /* Clinomania */ = {
 			isa = PBXGroup;
 			children = (
+				D50594182470A74E0022B63D /* Sounds */,
+				D56853CF246601760040D4CA /* Info.plist */,
 				D56853BF246601740040D4CA /* AppDelegate.swift */,
-				D56853CA246601760040D4CA /* Assets.xcassets */,
-				D59B607B246B69B50026753C /* DataModel.xcdatamodeld */,
 				D56853C3246601740040D4CA /* FirstViewController.swift */,
 				D59B6079246B422B0026753C /* Functions.swift */,
-				D56853CF246601760040D4CA /* Info.plist */,
 				D505940F246FB4BE0022B63D /* Job+CoreDataClass.swift */,
 				D5059410246FB4BE0022B63D /* Job+CoreDataProperties.swift */,
 				D5E2A367246A72A6005808C7 /* JobItem.swift */,
 				D5094FF8246733A00029489D /* JobPostViewController.swift */,
 				D5059413247078E20022B63D /* JobTableViewCell.swift */,
-				D56853CC246601760040D4CA /* LaunchScreen.storyboard */,
-				D56853C7246601740040D4CA /* Main.storyboard */,
 				D56853C1246601740040D4CA /* SceneDelegate.swift */,
 				D56853C5246601740040D4CA /* SecondViewController.swift */,
 				D56853D7246610700040D4CA /* SignInViewController.swift */,
 				D5E2A36124690F5A005808C7 /* successHudView.swift */,
+				D56853CA246601760040D4CA /* Assets.xcassets */,
+				D59B607B246B69B50026753C /* DataModel.xcdatamodeld */,
+				D56853CC246601760040D4CA /* LaunchScreen.storyboard */,
+				D56853C7246601740040D4CA /* Main.storyboard */,
 			);
 			path = Clinomania;
 			sourceTree = "<group>";
@@ -171,7 +185,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D505941A2470A74E0022B63D /* beep-hightone.caf in Resources */,
 				D56853CE246601760040D4CA /* LaunchScreen.storyboard in Resources */,
+				D505941C2470AE170022B63D /* slide-rock.caf in Resources */,
 				D56853CB246601760040D4CA /* Assets.xcassets in Resources */,
 				D56853C9246601740040D4CA /* Main.storyboard in Resources */,
 			);

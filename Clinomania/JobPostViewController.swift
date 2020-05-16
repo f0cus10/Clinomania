@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import AudioToolbox
 
 protocol JobPostViewControllerDelegate: class {
     func postNewJobOrder(_ controller: JobPostViewController, didFinishCreating item: JobItem)
@@ -18,6 +19,8 @@ class JobPostViewController: UIViewController {
     weak var delegate: JobPostViewControllerDelegate?
     
     var location: CLLocation?
+    
+    var soundID: SystemSoundID = 0
     
     @IBOutlet weak var submitJobButton: UIButton!
     @IBOutlet weak var addPhotoButton: UIButton!
@@ -34,6 +37,7 @@ class JobPostViewController: UIViewController {
         submitJobButton.layer.cornerRadius = 5.0
         addPhotoButton.layer.cornerRadius = 5.0
         
+        loadSoundEffect("slide-rock.caf")
         updateLocationFields()
         //hide keyboard
         let dismissGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
@@ -45,6 +49,7 @@ class JobPostViewController: UIViewController {
     }
     
     @IBAction func submitJobPosting(){
+        playSoundEffect()
         
         if let jobType = jobTypeTextField.text, let rateString = rateTextField.text, let durationString = durationTextField.text {
             
@@ -57,9 +62,11 @@ class JobPostViewController: UIViewController {
         // display hud
         let successHud = successHudView.hud(containerView: navigationController!.view, animated: true)
         successHud.displayText = "Success"
+        playSoundEffect()
         
         afterDelay(0.6){
             successHud.hide(animated: true)
+            self.unloadSoundEffect()
             self.navigationController?.popViewController(animated: true)
         }
     }
@@ -70,6 +77,27 @@ class JobPostViewController: UIViewController {
             latitudeField.text = String(coordinate: location.coordinate.latitude)
             longitudeField.text = String(coordinate: location.coordinate.longitude)
         }
+    }
+    
+    func loadSoundEffect(_ name: String){
+        if let path = Bundle.main.path(forResource: name, ofType: nil) {
+            let fileURL = URL(fileURLWithPath: path, isDirectory: false)
+            print("*** the sound file url is: \(fileURL)")
+            let error = AudioServicesCreateSystemSoundID(fileURL as CFURL, &soundID)
+            
+            if error != kAudioServicesNoError {
+                print("Error code \(error) loading sound: \(path)")
+            }
+        }
+    }
+    
+    func unloadSoundEffect(){
+        AudioServicesDisposeSystemSoundID(soundID)
+        soundID = 0
+    }
+    
+    func playSoundEffect(){
+        AudioServicesPlaySystemSound(soundID)
     }
     
     @objc func hideKeyboard(_ gestureRecognizer: UIGestureRecognizer){
