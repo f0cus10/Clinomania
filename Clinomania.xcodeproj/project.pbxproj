@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D5059411246FB4BE0022B63D /* Job+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = D505940F246FB4BE0022B63D /* Job+CoreDataClass.swift */; };
 		D5059412246FB4BE0022B63D /* Job+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5059410246FB4BE0022B63D /* Job+CoreDataProperties.swift */; };
+		D5059414247078E20022B63D /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5059413247078E20022B63D /* JobTableViewCell.swift */; };
 		D5094FF9246733A00029489D /* JobPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5094FF8246733A00029489D /* JobPostViewController.swift */; };
 		D56853C0246601740040D4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853BF246601740040D4CA /* AppDelegate.swift */; };
 		D56853C2246601740040D4CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853C1246601740040D4CA /* SceneDelegate.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		D505940F246FB4BE0022B63D /* Job+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Job+CoreDataClass.swift"; path = "../Job+CoreDataClass.swift"; sourceTree = "<group>"; };
 		D5059410246FB4BE0022B63D /* Job+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Job+CoreDataProperties.swift"; path = "../Job+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		D5059413247078E20022B63D /* JobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
 		D5094FF8246733A00029489D /* JobPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPostViewController.swift; sourceTree = "<group>"; };
 		D56853BC246601740040D4CA /* Clinomania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clinomania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56853BF246601740040D4CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				D5059410246FB4BE0022B63D /* Job+CoreDataProperties.swift */,
 				D5E2A367246A72A6005808C7 /* JobItem.swift */,
 				D5094FF8246733A00029489D /* JobPostViewController.swift */,
+				D5059413247078E20022B63D /* JobTableViewCell.swift */,
 				D56853CC246601760040D4CA /* LaunchScreen.storyboard */,
 				D56853C7246601740040D4CA /* Main.storyboard */,
 				D56853C1246601740040D4CA /* SceneDelegate.swift */,
@@ -188,6 +191,7 @@
 				D5059411246FB4BE0022B63D /* Job+CoreDataClass.swift in Sources */,
 				D5094FF9246733A00029489D /* JobPostViewController.swift in Sources */,
 				D5059412246FB4BE0022B63D /* Job+CoreDataProperties.swift in Sources */,
+				D5059414247078E20022B63D /* JobTableViewCell.swift in Sources */,
 				D59B607D246B69B60026753C /* DataModel.xcdatamodeld in Sources */,
 				D56853C4246601740040D4CA /* FirstViewController.swift in Sources */,
 				D56853C0246601740040D4CA /* AppDelegate.swift in Sources */,

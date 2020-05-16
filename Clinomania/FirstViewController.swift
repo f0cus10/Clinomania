@@ -265,16 +265,11 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CreateJobCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CreateJobCell", for: indexPath) as! JobTableViewCell
         
         let job = jobs[indexPath.row]
         
-        let jobTypeLabel = cell.viewWithTag(100) as! UILabel
-        let compensationLabel = cell.viewWithTag(101) as! UILabel
-        
-        jobTypeLabel.text = job.type
-        compensationLabel.text = String(format: "%.1f", 0);
-        
+        cell.configure(for: job)
         return cell
     }
 }

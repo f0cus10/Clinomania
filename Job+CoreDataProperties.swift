@@ -17,10 +17,10 @@ extension Job {
         return NSFetchRequest<Job>(entityName: "Job")
     }
 
-    @NSManaged public var date: Date?
+    @NSManaged public var date: Date
     @NSManaged public var latitude: Double
     @NSManaged public var longitude: Double
-    @NSManaged public var type: String?
+    @NSManaged public var type: String
     @NSManaged public var compensation: Double
 
 }
