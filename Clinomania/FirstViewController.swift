@@ -20,6 +20,7 @@ private let dateFormatter: DateFormatter = {
 class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostViewControllerDelegate {
     
     @IBOutlet weak var postJobButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     // CoreLocation variables
     let locationManager = CLLocationManager()
@@ -32,9 +33,11 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
     
     // CoreData variable
     var managedObjectContext: NSManagedObjectContext!
+    var jobs = [Job]()
     
     // Date
     var currentDate = Date()
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -45,10 +48,25 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         postJobButton.layer.cornerRadius = 5.0
+        tableView.contentInset = UIEdgeInsets(top: 80, left: 0, bottom: 0, right: 0)
+        
         updateButton()
         let buttonTitleColor = UIColor(red: 0.95, green: 0.98, blue: 0.93, alpha: 1.00)
         postJobButton.setTitleColor(buttonTitleColor, for: .normal)
         postJobButton.setTitleColor(buttonTitleColor, for: .disabled)
+        
+        let fetchRequest = NSFetchRequest<Job>()
+        let entity = Job.entity()
+        fetchRequest.entity = entity
+        // sort in descending order
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        do {
+            jobs = try managedObjectContext.fetch(fetchRequest)
+        } catch {
+            fatalCoreDataError(error)
+        }
         
         // add a GCD dispatch
         afterDelay(0.4, run: {
@@ -178,7 +196,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
     // MARK: - JobPostViewControllerDelegate methods
     func postNewJobOrder(_ controller: JobPostViewController, didFinishCreating item: JobItem) {
         if let location = currentLocation {
-            let managedJob = Job.makeJob(withContext: managedObjectContext, jobType: item.jobType, formattedDate: currentDate, coordinate: location.coordinate)
+            let _ = Job.makeJob(withContext: managedObjectContext, jobType: item.jobType, formattedDate: currentDate, coordinate: location.coordinate)
             
             do {
                 try managedObjectContext.save()
@@ -239,3 +257,13 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
     }
 }
 
+extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return jobs.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+}

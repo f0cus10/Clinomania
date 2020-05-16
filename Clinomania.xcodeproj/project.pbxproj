@@ -82,21 +82,21 @@
 			isa = PBXGroup;
 			children = (
 				D56853BF246601740040D4CA /* AppDelegate.swift */,
-				D56853C1246601740040D4CA /* SceneDelegate.swift */,
-				D56853C3246601740040D4CA /* FirstViewController.swift */,
-				D56853C5246601740040D4CA /* SecondViewController.swift */,
-				D56853D7246610700040D4CA /* SignInViewController.swift */,
-				D5094FF8246733A00029489D /* JobPostViewController.swift */,
+				D56853CA246601760040D4CA /* Assets.xcassets */,
 				D59B607B246B69B50026753C /* DataModel.xcdatamodeld */,
+				D56853C3246601740040D4CA /* FirstViewController.swift */,
+				D59B6079246B422B0026753C /* Functions.swift */,
+				D56853CF246601760040D4CA /* Info.plist */,
 				D59B607E246B6AD10026753C /* Job+CoreDataClass.swift */,
 				D59B607F246B6AD10026753C /* Job+CoreDataProperties.swift */,
 				D5E2A367246A72A6005808C7 /* JobItem.swift */,
-				D5E2A36124690F5A005808C7 /* successHudView.swift */,
-				D59B6079246B422B0026753C /* Functions.swift */,
-				D56853C7246601740040D4CA /* Main.storyboard */,
-				D56853CA246601760040D4CA /* Assets.xcassets */,
+				D5094FF8246733A00029489D /* JobPostViewController.swift */,
 				D56853CC246601760040D4CA /* LaunchScreen.storyboard */,
-				D56853CF246601760040D4CA /* Info.plist */,
+				D56853C7246601740040D4CA /* Main.storyboard */,
+				D56853C1246601740040D4CA /* SceneDelegate.swift */,
+				D56853C5246601740040D4CA /* SecondViewController.swift */,
+				D56853D7246610700040D4CA /* SignInViewController.swift */,
+				D5E2A36124690F5A005808C7 /* successHudView.swift */,
 			);
 			path = Clinomania;
 			sourceTree = "<group>";

@@ -74,7 +74,6 @@ Press OK to terminate the app. Sorry for the inconvenience.
             
             let navController = self.window!.rootViewController!
             navController.present(alert, animated: true, completion: nil)
-            
         }
     }
 }
