@@ -47,9 +47,10 @@ class JobPostViewController: UIViewController {
     @IBAction func submitJobPosting(){
         
         if let jobType = jobTypeTextField.text, let rateString = rateTextField.text, let durationString = durationTextField.text {
-        
+            
             if let rate = Double(rateString), let duration = Double(durationString) {
                 let job = JobItem.create(withType: jobType, compensation: rate*duration)
+                
                 delegate?.postNewJobOrder(self, didFinishCreating: job)
             }
         }

@@ -195,6 +195,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
     
     // MARK: - JobPostViewControllerDelegate methods
     func postNewJobOrder(_ controller: JobPostViewController, didFinishCreating item: JobItem) {
+        print("*** the job item's type was: \(item.jobType)")
         if let location = currentLocation {
             let _ = Job.makeJob(withContext: managedObjectContext, jobType: item.jobType, formattedDate: currentDate, coordinate: location.coordinate)
             
@@ -264,6 +265,16 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CreateJobCell", for: indexPath)
+        
+        let job = jobs[indexPath.row]
+        
+        let jobTypeLabel = cell.viewWithTag(100) as! UILabel
+        let compensationLabel = cell.viewWithTag(101) as! UILabel
+        
+        jobTypeLabel.text = job.type
+        compensationLabel.text = String(format: "%.1f", 0);
+        
+        return cell
     }
 }

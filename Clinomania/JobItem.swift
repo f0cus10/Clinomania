@@ -21,6 +21,6 @@ class JobItem: NSObject {
         instance.jobType = withType
         instance.totalCompensation = compensation
         
-        return JobItem()
+        return instance
     }
 }
