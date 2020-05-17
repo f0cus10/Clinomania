@@ -9,6 +9,8 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    
+    var searchResults: JobArray!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -18,12 +20,28 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        getJobsNetwork()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         navigationController?.setNavigationBarHidden(false, animated: false)
     }
-
+    
+    //MARK: - Network Helper Functions
+    func getJobsNetwork(){
+        let url = URL(string: "http://clinomania-backend.f0cus.dev/postedjobs")!
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: url){
+            (data, response, error) in
+            if let error = error {
+                print("Failure! \(error.localizedDescription)")
+            } else {
+                print("Success! \(response!)")
+            }
+        }
+        dataTask.resume()
+        
+    }
 
 }
 
