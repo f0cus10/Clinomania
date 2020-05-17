@@ -10,7 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    var searchResults: JobArray!
+    var searchResults: [JobSearchResult]!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,12 +35,28 @@ class SecondViewController: UIViewController {
             (data, response, error) in
             if let error = error {
                 print("Failure! \(error.localizedDescription)")
+            } else if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                if let responseData = data {
+                    self.searchResults = self.parse(data: responseData)
+                    print("Success! \(responseData)")
+                }
             } else {
-                print("Success! \(response!)")
+                print("Failure! \(response!)")
             }
         }
         dataTask.resume()
         
+    }
+    
+    func parse(data: Data) -> [JobSearchResult]{
+        do {
+            let decoder = JSONDecoder()
+            let result = try decoder.decode(JobArray.self, from: data)
+            return result.results
+        } catch {
+            print("JSON Error: \(error)")
+            return []
+        }
     }
 
 }
