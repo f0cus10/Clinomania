@@ -27,6 +27,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         listenerCoreDataNotif()
         
+        let _ = AppReviewer.shared
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

@@ -68,6 +68,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
         postJobButton.layer.cornerRadius = 5.0
         tableView.contentInset = UIEdgeInsets(top: 80, left: 0, bottom: 0, right: 0)
         
+        
+        AppReviewer.shared.evaluateReviewRequest()
+        
         updateButton()
         let buttonTitleColor = UIColor(red: 0.95, green: 0.98, blue: 0.93, alpha: 1.00)
         postJobButton.setTitleColor(buttonTitleColor, for: .normal)
