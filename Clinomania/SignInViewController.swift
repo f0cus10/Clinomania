@@ -42,13 +42,6 @@ class SignInViewController: UIViewController {
         return
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showSignedIn" {
-//            if let jobController = (segue.destination as! UITabBarController).viewControllers?.first {
-//        }
-//
-//    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showSignedIn", let jobController = (segue.destination as! UITabBarController).viewControllers?.first {
             let firstChild = jobController as! FirstViewController

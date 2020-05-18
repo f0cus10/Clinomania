@@ -84,6 +84,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, JobPostV
         })
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        stopLocationManager()
+    }
     
     func getLocation(){
         let authStatus = CLLocationManager.authorizationStatus()

@@ -1,18 +1,19 @@
 //
-//  JobTableViewCell.swift
+//  JobSearchTableViewCell.swift
 //  Clinomania
 //
-//  Created by Iftikhar A. Khan on 5/16/20.
+//  Created by Iftikhar A. Khan on 5/18/20.
 //  Copyright © 2020 Iftikhar A. Khan. All rights reserved.
 //
 
 import UIKit
 
-class JobTableViewCell: UITableViewCell {
+class JobSearchTableViewCell: UITableViewCell {
     
     @IBOutlet weak var jobTypeLabel: UILabel!
     @IBOutlet weak var compensationLabel: UILabel!
-
+    @IBOutlet weak var distanceLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -24,13 +25,11 @@ class JobTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(for forJob: Job){
-        if forJob.type.isEmpty {
-            jobTypeLabel.text = "(No type provided)"
-        } else {
-            jobTypeLabel.text = forJob.type
-        }
-        
-        compensationLabel.text = String(format: "%.2f", forJob.compensation)
+    func configure(for forSearchResult: JobSearchResult){
+        // do something
+        jobTypeLabel.text = forSearchResult.type
+        compensationLabel.text = "$\(String(format: "%.2f", forSearchResult.compensation!))"
+        distanceLabel.text = "Unknown"
     }
+
 }

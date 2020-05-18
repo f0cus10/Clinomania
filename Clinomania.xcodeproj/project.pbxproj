@@ -12,6 +12,7 @@
 		D5059414247078E20022B63D /* JobTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5059413247078E20022B63D /* JobTableViewCell.swift */; };
 		D505941A2470A74E0022B63D /* beep-hightone.caf in Resources */ = {isa = PBXBuildFile; fileRef = D50594192470A74E0022B63D /* beep-hightone.caf */; };
 		D505941C2470AE170022B63D /* slide-rock.caf in Resources */ = {isa = PBXBuildFile; fileRef = D505941B2470AE170022B63D /* slide-rock.caf */; };
+		D505941E2470F67C0022B63D /* JobSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D505941D2470F67C0022B63D /* JobSearchResult.swift */; };
 		D5094FF9246733A00029489D /* JobPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5094FF8246733A00029489D /* JobPostViewController.swift */; };
 		D56853C0246601740040D4CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853BF246601740040D4CA /* AppDelegate.swift */; };
 		D56853C2246601740040D4CA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853C1246601740040D4CA /* SceneDelegate.swift */; };
@@ -21,6 +22,7 @@
 		D56853CB246601760040D4CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D56853CA246601760040D4CA /* Assets.xcassets */; };
 		D56853CE246601760040D4CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D56853CC246601760040D4CA /* LaunchScreen.storyboard */; };
 		D56853D8246610700040D4CA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853D7246610700040D4CA /* SignInViewController.swift */; };
+		D57D22EC247329A200767E23 /* JobSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D22EB247329A200767E23 /* JobSearchTableViewCell.swift */; };
 		D57D22EE24734D2000767E23 /* AppReviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D22ED24734D2000767E23 /* AppReviewer.swift */; };
 		D59B607A246B422B0026753C /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59B6079246B422B0026753C /* Functions.swift */; };
 		D59B607D246B69B60026753C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D59B607B246B69B50026753C /* DataModel.xcdatamodeld */; };
@@ -36,6 +38,7 @@
 		D5059413247078E20022B63D /* JobTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobTableViewCell.swift; sourceTree = "<group>"; };
 		D50594192470A74E0022B63D /* beep-hightone.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "beep-hightone.caf"; sourceTree = "<group>"; };
 		D505941B2470AE170022B63D /* slide-rock.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "slide-rock.caf"; sourceTree = "<group>"; };
+		D505941D2470F67C0022B63D /* JobSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchResult.swift; sourceTree = "<group>"; };
 		D5094FF8246733A00029489D /* JobPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPostViewController.swift; sourceTree = "<group>"; };
 		D56853BC246601740040D4CA /* Clinomania.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clinomania.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56853BF246601740040D4CA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		D56853CD246601760040D4CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D56853CF246601760040D4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D56853D7246610700040D4CA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		D57D22EB247329A200767E23 /* JobSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchTableViewCell.swift; sourceTree = "<group>"; };
 		D57D22ED24734D2000767E23 /* AppReviewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewer.swift; sourceTree = "<group>"; };
 		D59B6079246B422B0026753C /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		D59B607C246B69B60026753C /* Job.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Job.xcdatamodel; sourceTree = "<group>"; };
@@ -109,8 +113,10 @@
 				D5094FF8246733A00029489D /* JobPostViewController.swift */,
 				D57D22ED24734D2000767E23 /* AppReviewer.swift */,
 				D5059413247078E20022B63D /* JobTableViewCell.swift */,
+				D57D22EB247329A200767E23 /* JobSearchTableViewCell.swift */,
 				D56853C1246601740040D4CA /* SceneDelegate.swift */,
 				D56853C5246601740040D4CA /* SecondViewController.swift */,
+				D505941D2470F67C0022B63D /* JobSearchResult.swift */,
 				D56853D7246610700040D4CA /* SignInViewController.swift */,
 				D5E2A36124690F5A005808C7 /* successHudView.swift */,
 				D56853CA246601760040D4CA /* Assets.xcassets */,
@@ -205,6 +211,7 @@
 			files = (
 				D56853C6246601740040D4CA /* SecondViewController.swift in Sources */,
 				D5E2A36224690F5A005808C7 /* successHudView.swift in Sources */,
+				D505941E2470F67C0022B63D /* JobSearchResult.swift in Sources */,
 				D59B607A246B422B0026753C /* Functions.swift in Sources */,
 				D57D22EE24734D2000767E23 /* AppReviewer.swift in Sources */,
 				D5E2A368246A72A6005808C7 /* JobItem.swift in Sources */,
@@ -214,6 +221,7 @@
 				D5059414247078E20022B63D /* JobTableViewCell.swift in Sources */,
 				D59B607D246B69B60026753C /* DataModel.xcdatamodeld in Sources */,
 				D56853C4246601740040D4CA /* FirstViewController.swift in Sources */,
+				D57D22EC247329A200767E23 /* JobSearchTableViewCell.swift in Sources */,
 				D56853C0246601740040D4CA /* AppDelegate.swift in Sources */,
 				D56853D8246610700040D4CA /* SignInViewController.swift in Sources */,
 				D56853C2246601740040D4CA /* SceneDelegate.swift in Sources */,
