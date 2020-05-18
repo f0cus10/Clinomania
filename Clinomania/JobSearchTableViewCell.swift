@@ -25,8 +25,11 @@ class JobSearchTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configure(for: JobSearchResult){
+    func configure(for forSearchResult: JobSearchResult){
         // do something
+        jobTypeLabel.text = forSearchResult.type
+        compensationLabel.text = "$\(String(format: "%.2f", forSearchResult.compensation!))"
+        distanceLabel.text = "Unknown"
     }
 
 }
