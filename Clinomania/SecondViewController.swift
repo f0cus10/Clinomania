@@ -16,6 +16,7 @@ class SecondViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -30,7 +31,7 @@ class SecondViewController: UIViewController {
     
     //MARK: - Network Helper Functions
     func getJobsNetwork(){
-        let url = URL(string: "http://clinomania-backend.f0cus.dev/postedjobs")!
+        let url = URL(string: "https://clinomania-backend.f0cus.dev/postedjobs")!
         let session = URLSession.shared
         let dataTask = session.dataTask(with: url){
             (data, response, error) in
@@ -53,7 +54,7 @@ class SecondViewController: UIViewController {
         do {
             let decoder = JSONDecoder()
             let result = try decoder.decode(JobArray.self, from: data)
-            return result.results
+            return result.jobs
         } catch {
             print("JSON Error: \(error)")
             return []
@@ -79,7 +80,7 @@ extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
             cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
         }
         
-        cell.textLabel!.text = searchResults[indexPath.row].jobType!
+        cell.textLabel!.text = searchResults[indexPath.row].type!
         return cell
     }
     

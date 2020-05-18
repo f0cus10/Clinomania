@@ -9,13 +9,13 @@
 import Foundation
 
 class JobArray: Codable {
-    var resultCount = 0
-    var results = [JobSearchResult]()
+    var jobCount: Int? = 0
+    var jobs = [JobSearchResult]()
 }
 
 class JobSearchResult: Codable {
-    var jobID: Int?
-    var jobType: String?
+    var id: Int?
+    var type: String? = ""
     var latitude: Double?
     var longitude: Double?
     var compensation: Double?
