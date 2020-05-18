@@ -15,8 +15,12 @@ class JobArray: Codable {
 
 class JobSearchResult: Codable {
     var id: Int?
-    var type: String? = ""
+    var type: String = ""
     var latitude: Double?
     var longitude: Double?
     var compensation: Double?
+}
+
+func < (lhs: JobSearchResult, rhs: JobSearchResult) -> Bool {
+    return lhs.type.localizedStandardCompare(rhs.type) == .orderedDescending
 }
