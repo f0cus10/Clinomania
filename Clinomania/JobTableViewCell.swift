@@ -33,5 +33,4 @@ class JobTableViewCell: UITableViewCell {
         
         compensationLabel.text = String(format: "%.2f", forJob.compensation)
     }
-
 }
