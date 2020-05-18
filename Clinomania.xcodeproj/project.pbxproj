@@ -23,6 +23,7 @@
 		D56853CE246601760040D4CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D56853CC246601760040D4CA /* LaunchScreen.storyboard */; };
 		D56853D8246610700040D4CA /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56853D7246610700040D4CA /* SignInViewController.swift */; };
 		D57D22EC247329A200767E23 /* JobSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D22EB247329A200767E23 /* JobSearchTableViewCell.swift */; };
+		D57D22EE24734D2000767E23 /* AppReviewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57D22ED24734D2000767E23 /* AppReviewer.swift */; };
 		D59B607A246B422B0026753C /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59B6079246B422B0026753C /* Functions.swift */; };
 		D59B607D246B69B60026753C /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D59B607B246B69B50026753C /* DataModel.xcdatamodeld */; };
 		D59B6083246B6B5B0026753C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D59B6082246B6B5B0026753C /* CoreData.framework */; };
@@ -50,6 +51,7 @@
 		D56853CF246601760040D4CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D56853D7246610700040D4CA /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		D57D22EB247329A200767E23 /* JobSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobSearchTableViewCell.swift; sourceTree = "<group>"; };
+		D57D22ED24734D2000767E23 /* AppReviewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReviewer.swift; sourceTree = "<group>"; };
 		D59B6079246B422B0026753C /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		D59B607C246B69B60026753C /* Job.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Job.xcdatamodel; sourceTree = "<group>"; };
 		D59B6082246B6B5B0026753C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -109,6 +111,7 @@
 				D5059410246FB4BE0022B63D /* Job+CoreDataProperties.swift */,
 				D5E2A367246A72A6005808C7 /* JobItem.swift */,
 				D5094FF8246733A00029489D /* JobPostViewController.swift */,
+				D57D22ED24734D2000767E23 /* AppReviewer.swift */,
 				D5059413247078E20022B63D /* JobTableViewCell.swift */,
 				D57D22EB247329A200767E23 /* JobSearchTableViewCell.swift */,
 				D56853C1246601740040D4CA /* SceneDelegate.swift */,
@@ -210,6 +213,7 @@
 				D5E2A36224690F5A005808C7 /* successHudView.swift in Sources */,
 				D505941E2470F67C0022B63D /* JobSearchResult.swift in Sources */,
 				D59B607A246B422B0026753C /* Functions.swift in Sources */,
+				D57D22EE24734D2000767E23 /* AppReviewer.swift in Sources */,
 				D5E2A368246A72A6005808C7 /* JobItem.swift in Sources */,
 				D5059411246FB4BE0022B63D /* Job+CoreDataClass.swift in Sources */,
 				D5094FF9246733A00029489D /* JobPostViewController.swift in Sources */,
