@@ -11,6 +11,7 @@ import UIKit
 class SecondViewController: UIViewController {
     
     var searchResults: [JobSearchResult]!
+    @IBOutlet weak var tableView: UITableView!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -59,5 +60,39 @@ class SecondViewController: UIViewController {
         }
     }
 
+}
+
+extension SecondViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchResults.count == 0 {
+            return 1
+        } else {
+            return searchResults.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "JobSearchResultCell"
+        var cell: UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+        
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
+        }
+        
+        cell.textLabel!.text = searchResults[indexPath.row].jobType!
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if searchResults.count == 0 {
+            return nil
+        } else {
+            return indexPath
+        }
+    }
 }
 
